@@ -1,0 +1,61 @@
+*{
+    font-family: "Open Sans" !important;
+}
+
+.iconChange:hover img{
+    transform: translateX(-180%);
+}
+.ayoub{
+    background: linear-gradient(to left, #14BC9C 50%, #61ccb8 50%) right;
+    background-size: 200%;  
+}
+.safa{
+    background: linear-gradient(to left, #334A5A 50%, #466881 50%) right;
+    background-size: 200%;
+}
+.mery{
+    background: linear-gradient(to left, #F4F3F0 50%, #61ccb8 50%) right;
+    background-size: 200%;
+}
+    /* Barre de défilement pour les navigateurs WebKit (Chrome, Safari) */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background-color: #334A5A; /* Couleur du curseur */
+        border-radius: 2px; /* Arrondi des coins */
+    }
+    
+    ::-webkit-scrollbar-track {
+        background-color: #F3F4F6; /* Couleur de la piste */
+    }
+    .image {
+        background-image: url('../image/stop.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 80vh; /* 50% de la hauteur de la vue */
+        width: 100%; /* 100% de la largeur de la vue */
+    }
+.height{
+    height: 80vh; 
+}
+.titre{
+    font-family: "Truculenta" !important;
+    color: #308284;
+}
+.titre1{
+    font-family: "Montserrat" !important;
+
+}
+.imagee {
+    background-image: url('../image/cov.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 42vh; /* 50% de la hauteur de la vue */
+    width: 100%; /* 100% de la largeur de la vue */
+}
+.heightt{
+    height: 42vh; 
+}
+
