@@ -10,17 +10,31 @@
 
                     <li
                         class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
-                        <a href="/">    
-                            <div>Acceuil</div>
+                        <a href="#">    
+                            <div>Convoiturage</div>
                         </a>
                     </li>
                     <li
                         class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
-                        <a href="/contact">
+                        <a href="/addTrajet">
 
-                            <div>Contact</div>
+                            <div>Ajouter Trajet</div>
                         </a>
                     </li>
+                    <li
+                    class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
+                    <a href="#">
+
+                        <div>Mes offres</div>
+                    </a>
+                </li>
+                    <li
+                    class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
+                    <a href="#">
+
+                        <div>Réservation</div>
+                    </a>
+                </li>
                 </ul>
             </div>
 
@@ -28,21 +42,20 @@
                 <div class="flex items-center justify-center w-8 h-8 mr-4 rounded-full bg-slate-100">
                 </div>
             </div>
-            <div class="flex items-center">
+            <div class="flex items-center gap-2">
+                <a href="/profile">
+                <div class="hidden lg:flex justify-center items-center align-middle gap-2 border-2 w-fit   border-[#14BC9C] bg-green-50 rounded-full px-2 py-1">
+                    <p class="text-[#334A5A] font-semibold align-middle text-sm ">  Ayoub Snini</p>
+                    <img width="34" src="{{ asset('image/ayb.jpg') }}" class="border border-[#14BC9C] rounded-full " alt="user">
+                </div>
+                 </a>
                 <div class="hidden lg:inline-block">
                     <button type="button "
-                    class=" flex items-center g gap-2 px-4 py-1 mr-2 text-white transition-all duration-500 safa hover:bg-left rounded-3xl">
-                    Inscription <i class="bi bi-person-lines-fill"></i>
+                    class=" flex items-center g gap-2 px-3 py-2 mr-2 text-white transition-all duration-500 safa hover:bg-left rounded-3xl">
+                    <i class="bi bi-box-arrow-right"></i>
                 </button>
                 </div>
-                <div class="hidden lg:inline-block">
-                    <button type="button "
-                    class=" flex items-center g gap-2 px-4 py-1 mr-2 text-white transition-all duration-500 ayoub hover:bg-left rounded-3xl">
-                    Connexion <i class="bi bi-box-arrow-right"></i>
-                </button>
-                </div>
-                <div class="hidden lg:inline-block">
-            </div>
+
             <div class="lg:hidden">
                 <button class="navbar-burger text-[#14BC9C] focus:outline-none">
                     <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -70,10 +83,13 @@
         <div class="mt-3">
             <ul>
                 <li class="mb-1">
-                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="#">Acceuil</a>
+                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="#">Trajets</a>
                 </li>
                 <li class="mb-1">
-                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="#">Contact</a>
+                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="#">Ajouter Trajet</a>
+                </li>
+                <li class="mb-1">
+                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="#">Réservation</a>
                 </li>
 
             </ul>

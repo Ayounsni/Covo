@@ -31,7 +31,7 @@
         background-color: #F3F4F6; /* Couleur de la piste */
     }
     .image {
-        background-image: url('../image/stop.jpg');
+        background-image: url('../image/ayoubi.png');
         background-size: cover;
         background-repeat: no-repeat;
         height: 80vh; /* 50% de la hauteur de la vue */
@@ -40,13 +40,23 @@
 .height{
     height: 80vh; 
 }
+.bottom1{
+    position: absolute !important;
+    bottom: 120px !important;
+}
 .titre{
     font-family: "Truculenta" !important;
-    color: #308284;
+    color: #2f7273;
 }
 .titre1{
     font-family: "Montserrat" !important;
+   
 
+}
+.titre2{
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
 }
 .imagee {
     background-image: url('../image/cov.jpg');
@@ -57,5 +67,8 @@
 }
 .heightt{
     height: 42vh; 
+}
+.size:hover{
+    font-size: 17px !important;
 }
 
