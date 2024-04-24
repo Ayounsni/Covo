@@ -14,13 +14,13 @@
         </div>
         <div class="flex flex-col justify-center items-center w-[25%] mb-16">
             <p class="text-gray-50 text-center text-sm lg:text-lg font-semibold rounded-full px-2  bg-[#61ccb8]"></i>Note</p>
-            <p class="text-gray-50 text-center text-sm lg:text-lg "> 4.5 / 5 <i class="bi bi-star-fill text-yellow-500"></i></i></p>
+            <p class="text-gray-50 text-center text-sm lg:text-lg "> 4.5 / 5 <i class="bi bi-star-fill text-yellow-500"></i></p>
             <!-- <p class="text-gray-50 text-center text-sm lg:text-lg font-semibold"><i class="bi bi-star-fill text-yellow-500"></i></p> -->
         </div>
     </div>
     <div class="flex justify-center ">
     <img  class="absolute top-32  rounded-full border-4 border-[#14BC9C] w-[150px] lg:w-[220px] " src="{{ asset('image/ayb.jpg') }}" alt="">
-    <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="absolute px-3 lg:top-80 font-semibold rounded-full text-2xl text-gray-50 safa hover:bg-left">+</button>
+    <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="absolute px-2 top-64 lg:top-80 lg:px-3 font-semibold rounded-full text-2xl text-gray-50 safa hover:bg-left">+</button>
     </div>
     <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden  overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-2xl max-h-full">
@@ -157,7 +157,7 @@
     
     <div class="flex justify-center items-center rounded-lg py-1  w-full">
         <div class="w-64 lg:w-[29%] z-2 ">
-            <img width="240" src="{{ asset('image/peu.jpg') }}" class="rounded-r-full border-r-4 border-t-4 border-[#14BC9C] transition-all" alt="auto">
+            <img width="240" src="{{ asset('image/peu.jpg') }}" class="rounded-r-full border-r-4 border-t-4 border-[#14BC9C] transition-all hover:blur-[1px]" alt="auto">
         </div>
         <div class="flex flex-col justify-center items-start align-middle gap-2 w-full">
             <p class="bg-[#14BC9C] pl-28 lg:pl-24 pt-2 pb-2 pr-4 relative right-8 lg:right-2 lg:right-8 rounded-r-full z-1 text-[#334A5A] text-sm lg:text-xl text-white shadow-md">Peugeot 206</p>

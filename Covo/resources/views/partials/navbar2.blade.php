@@ -11,28 +11,35 @@
                         class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
                         <a href="/convoiturage">  
 
-                            <div>Convoiturage</div>
+                            <div>Tableau de bord</div>
                         </a>
                     </li>
                     <li
                         class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
                         <a href="/addTrajet">
 
-                          <div>Ajouter Trajet</div>
+                          <div>Utilisateur</div>
                         </a>
                     </li>
                     <li
                     class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
                     <a href="mesTrajet">
 
-                        <div>Mes trajets</div>
+                        <div>Villes</div>
+                    </a>
+                </li>
+                    <li
+                    class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
+                    <a href="mesTrajet">
+
+                        <div>Trajets</div>
                     </a>
                 </li>
                     <li
                     class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
                     <a href="/reservationPassager">
 
-                    <div>Réservation</div>
+                    <div>Vérification</div>
                     </a>
                 </li>
                 </ul>
@@ -44,9 +51,9 @@
             </div>
             <div class="flex items-center gap-2">
                 <a href="/profile">
-                <div class="hidden lg:flex justify-center items-center align-middle gap-2 border-2 w-fit   border-[#14BC9C] bg-green-50 rounded-full px-2 py-1">
-                    <p class="text-[#334A5A] font-semibold align-middle text-sm ">  Ayoub Snini</p>
-                    <img width="34" src="{{ asset('image/ayb.jpg') }}" class="border border-[#14BC9C] rounded-full"  alt="user">
+                <div class="hidden lg:flex justify-center items-center align-middle gap-2 border-2 w-fit   border-[#334A5A] bg-[#F6F6F6] rounded-full px-2 py-1">
+                    <p class="text-[#334A5A] font-semibold align-middle text-sm ">  Admin</p>
+                    <img width="34" src="{{ asset('image/icone.png') }}" class="border border-[#14BC9C] rounded-full"  alt="user">
                 </div>
                  </a>
                 <div class="hidden lg:inline-block">

@@ -31,4 +31,25 @@ Route::get('/profile', function () {
 Route::get('/addTrajet', function () {
     return view('User/addTrajet');
 });
+Route::get('/editTrajet', function () {
+    return view('User/editTrajet');
+});
+Route::get('/convoiturage', function () {
+    return view('User/convoiturage');
+});
+Route::get('/mesTrajet', function () {
+    return view('User/mesTrajet');
+});
+Route::get('/reservationPassager', function () {
+    return view('User/reservationPassager');
+});
+Route::get('/reservationConducteur', function () {
+    return view('User/reservationConducteur');
+});
+Route::get('/stat', function () {
+    return view('Admin/stat');
+});
+Route::get('/ville', function () {
+    return view('Admin/ville');
+});
 
