@@ -19,7 +19,7 @@
     <div class="flex flex-col justify-center items-center mb-10 ">
     <div class="w-5/6  flex rounded-md mt-6 shadow-md bg-gray-100 ">
       <div class="w-[25%] align-middle flex justify-center items-center ">
-        <img width="190" src="{{ asset('image/peu.jpg') }}" class="rounded-md hover:scale-110 transition-all" alt="">
+        <img width="190" src="{{ asset('image/peu.jpg') }}" class="rounded-md hover:scale-110 transition-all" alt="img">
       </div>
       <div class="w-[75%] flex flex-col justify-between items-between p-2">
         <div class="flex justify-between w-full">

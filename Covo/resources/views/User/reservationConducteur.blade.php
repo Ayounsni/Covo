@@ -64,8 +64,8 @@
                   <i class="bi bi-check-circle"></i> Confirmer</button>
       
 
-             <button type="submit" class="text-white bg-red-500 hover:bg-red-700 w-32 focus:ring-4 focus:outline-none  focus:ring-green-200 font-medium rounded-lg text-sm px-3 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-              <i class="bi bi-x-circle"></i> Rejeter</button>
+                 <button type="submit" class="text-white bg-red-500 hover:bg-red-700 w-32 focus:ring-4 focus:outline-none  focus:ring-green-200 font-medium rounded-lg text-sm px-3 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                 <i class="bi bi-x-circle"></i> Rejeter</button>
 
       
   </td>

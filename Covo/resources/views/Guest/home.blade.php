@@ -2,7 +2,7 @@
     <div class=" height image shadow-sm">
         @include('partials.navbar')
        <h1 class="display-4 fw-semibold  px-3 lg:w-6/12 mt-20 text-[#308284] titre2"> Covoiturez Pour <br>
-        <span id="text-container" class="text-[#334A5A] display-4 fw-medium titre2  ">  </span></h1>
+        <span id="text-container" class="text-[#334A5A] display-4 fw-medium titre2   ">  </span></h1>
         <div class="d-flex justify-content-start px-3">
             <a href="" class=" px-7 border-2 border-[#334A5A] py-3 text-white transition-all duration-500 ayoub hover:bg-left lg:text-lg rounded-md text-gray-50 mt-6">Commencez Maintenant</a>
         </div>     

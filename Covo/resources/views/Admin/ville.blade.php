@@ -8,9 +8,14 @@
     hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 
     after:m-auto after:h-[3px] after:w-0 after:block">Gestion des villes</p>
     </div>
-    <a href="" class="self-end px-3">
-      <button type="submit" class="text-white mb-3 bg-orange-600 hover:bg-orange-700 focus:ring-4 focus:outline-none mt-5 focus:ring-orange-200 font-medium rounded-lg text-sm px-3 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-          <i class="bi bi-plus-lg"></i> Ajouter ville</button></a>
+    <div class="flex justify-between px-3 my-4">
+      <div class="flex w-[25%] border-b active:border-[#334A5A] ">
+        <div class=" text-xl px-2 "><i class="bi bi-search text-gray-400"></i></div>
+        <input type="text" placeholder="Chercher ville..." class=" px-2  outline-none bg-white ">
+      </div>
+      <button type="submit" class="py-1 px-4 text-white rounded-md transition-all  text-center duration-500 safa hover:bg-left">
+          <i class="bi bi-plus-lg"></i> Ajouter ville</button>
+        </div>
   <div class="relative overflow-x-auto px-2">
       <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
@@ -43,7 +48,7 @@
          <form method="POST"  action="">
              @method('DELETE')
              @csrf
-                 <button type="submit" class="text-red-500  focus:outline-none align-middle  font-medium  text-md text-center ">
+                 <button type="submit" class="text-red-500 hover:scale-125 focus:outline-none align-middle  font-medium  text-md text-center ">
                   <i class="bi bi-trash3"></i></button>
          </form>                 
   </td>

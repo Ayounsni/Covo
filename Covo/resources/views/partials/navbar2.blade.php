@@ -9,21 +9,21 @@
 
                     <li
                         class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
-                        <a href="/convoiturage">  
+                        <a href="/stat">  
 
                             <div>Tableau de bord</div>
                         </a>
                     </li>
                     <li
                         class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
-                        <a href="/addTrajet">
+                        <a href="/user">
 
                           <div>Utilisateur</div>
                         </a>
                     </li>
                     <li
                     class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
-                    <a href="mesTrajet">
+                    <a href="/ville">
 
                         <div>Villes</div>
                     </a>
@@ -37,7 +37,7 @@
                 </li>
                     <li
                     class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
-                    <a href="/reservationPassager">
+                    <a href="/verification">
 
                     <div>Vérification</div>
                     </a>
