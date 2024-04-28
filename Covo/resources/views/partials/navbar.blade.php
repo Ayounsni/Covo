@@ -7,20 +7,86 @@
             <div class="hidden lg:block">
                 <ul class="flex items-center justify-center text-sm text-blue-900">
 
+                     @guest
+                     <li
+                     class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
+                     <a href="/">    
+                         <div>Acceuil</div>
+                     </a>
+                 </li>
+                 <li
+                     class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
+                     <a href="/contact">
 
-                    <li
-                        class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
-                        <a href="/">    
-                            <div>Acceuil</div>
-                        </a>
-                    </li>
-                    <li
-                        class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
-                        <a href="/contact">
+                         <div>Contact</div>
+                     </a>
+                 </li>
+                     @endguest
+                     @admin
+                     <li
+                     class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
+                     <a href="/">    
+                         <div>Tableau de bord</div>
+                     </a>
+                 </li>
+                 <li
+                     class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
+                     <a href="/contact">
 
-                            <div>Contact</div>
-                        </a>
-                    </li>
+                         <div>Utilisateur</div>
+                     </a>
+                 </li>
+                 <li
+                 class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
+                 <a href="/">    
+                     <div>Villes</div>
+                 </a>
+             </li>
+             <li
+                 class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
+                 <a href="/contact">
+
+                     <div>Trajets</div>
+                 </a>
+             </li>
+             <li
+             class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
+             <a href="/">    
+                 <div>Vérification</div>
+             </a>
+         </li>
+
+                     @endadmin
+                     @user
+                     <li
+                     class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
+                     <a href="/">    
+                         <div>Convoiturage</div>
+                     </a>
+                 </li>
+                 <li
+                     class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
+                     <a href="/contact">
+
+                         <div>Ajouter Trajet</div>
+                     </a>
+                 </li>
+                 <li
+                 class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
+                 <a href="/">    
+                     <div>Mes trajets</div>
+                 </a>
+             </li>
+             <li
+                 class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
+                 <a href="/contact">
+
+                     <div>Réservation</div>
+                 </a>
+             </li>
+
+                     @enduser
+
                 </ul>
             </div>
 
@@ -28,7 +94,8 @@
                 <div class="flex items-center justify-center w-8 h-8 mr-4 rounded-full bg-slate-100">
                 </div>
             </div>
-            <div class="flex items-center">
+            <div class="flex items-center gap-2">
+                @guest
                 <div class="hidden lg:inline-block">
                     <button type="button "
                     class=" flex items-center g gap-2 px-4 py-1 mr-2 text-white transition-all duration-500 safa hover:bg-left rounded-3xl">
@@ -41,6 +108,35 @@
                     Connexion <i class="bi bi-box-arrow-right"></i>
                 </button>
                 </div>
+                @endguest
+                @user
+                <a href="/profile">
+                    <div class="hidden lg:flex justify-center items-center align-middle gap-2 border-2 w-fit   border-[#14BC9C] bg-green-50 rounded-full px-2 py-1">
+                        <p class="text-[#334A5A] font-semibold align-middle text-sm ">{{$user->prenom }} {{$user->nom }}</p>
+                        <img  src="{{ $user->photo ? asset('storage/'.$user->photo) : asset('image/user.jpg') }}" class="w-10 h-9 border border-[#14BC9C] rounded-full"  alt="user">
+                    </div>
+                     </a>
+                    <div class="hidden lg:inline-block">
+                     <a href="{{route('logout')}}">  <button type="button "
+                        class=" flex items-center g gap-2 px-3 py-2 mr-2 text-white transition-all duration-500 safa hover:bg-left rounded-3xl">
+                        <i class="bi bi-box-arrow-right"></i>
+                    </button></a> 
+                    </div>
+                @enduser
+                @admin
+                                <a href="/profile">
+                <div class="hidden lg:flex justify-center items-center align-middle gap-2 border-2 w-fit   border-[#334A5A] bg-[#F6F6F6] rounded-full px-2 py-1">
+                    <p class="text-[#334A5A] font-semibold align-middle text-sm ">  Admin</p>
+                    <img width="34" src="{{ asset('image/icone.png') }}" class="border border-[#14BC9C] rounded-full"  alt="user">
+                </div>
+                 </a>
+                <div class="hidden lg:inline-block">
+                    <a href="{{route('logout')}}">  <button type="button "
+                        class=" flex items-center g gap-2 px-3 py-2 mr-2 text-white transition-all duration-500 safa hover:bg-left rounded-3xl">
+                        <i class="bi bi-box-arrow-right"></i>
+                    </button></a> 
+                </div>
+                @endadmin
                 <div class="hidden lg:inline-block">
             </div>
             <div class="lg:hidden">
@@ -69,20 +165,60 @@
         </div>
         <div class="mt-3">
             <ul>
+                @guest
                 <li class="mb-1">
                     <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="#">Acceuil</a>
                 </li>
                 <li class="mb-1">
                     <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="#">Contact</a>
+                </li> 
+                @endguest
+                @user
+                <li class="mb-1">
+                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="#">Convoiturage</a>
                 </li>
+                <li class="mb-1">
+                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="#">Ajouter Trajet</a>
+                </li> 
+                <li class="mb-1">
+                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="#">Mes trajets</a>
+                </li>
+                <li class="mb-1">
+                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="#">Réservation</a>
+                </li>  
+                @enduser
+                @admin
+                <li class="mb-1">
+                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="#">Tableau de bord</a>
+                </li>
+                <li class="mb-1">
+                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="#">Utilisateur</a>
+                </li> 
+                <li class="mb-1">
+                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="#">Villes</a>
+                </li>
+                <li class="mb-1">
+                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="#">Trajets</a>
+                </li>
+                <li class="mb-1">
+                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="#">Vérification</a>
+                </li>
+                @endadmin
+
 
             </ul>
         </div>
         <div class="mt-auto">
+            @guest
             <div class="pt-6">
                 <a class="block px-3 py-2 mb-2 leading-loose text-md  text-center text-white font-semibold ayoub hover:bg-left  rounded-xl" href="#">Connexion <i class="bi bi-box-arrow-right"></i></a>
                 <a class="block px-3 py-2 mb-2 leading-loose text-md  text-center text-white font-semibold safa hover:bg-left  rounded-xl" href="#">Inscription <i class="bi bi-person-lines-fill"></i></a>
             </div>
+            @endguest
+            @auth
+            <a class="block px-3 py-2 mb-2 leading-loose text-md  text-center text-white font-semibold safa hover:bg-left  rounded-xl" href="#">Déconnexion<i class="bi bi-person-lines-fill"></i></a>
+            @endauth
+
         </div>
     </nav>
 </div>

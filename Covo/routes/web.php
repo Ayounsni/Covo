@@ -1,7 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CinController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\VoitureController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,27 +20,43 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('Guest/home');
-});
-
-Route::get('/register', [UserController::class, 'create'])
-->name('register');
-Route::post('/register', [UserController::class, 'store'])
-->name('registere');
-
-Route::get('/login', function () {
-    return view('Guest/login');
-});
-// Route::get('/register', function () {
-//     return view('Guest/register');
+// Route::get('/', function () {
+//     return view('Guest/home');
 // });
+
+Route::middleware('guest')->group(function () {
+    Route::get('/', function () {
+        return view('Guest/home');
+    });
+    Route::get('/register', [RegisterController::class, 'create'])
+    ->name('register');
+    Route::post('/register', [RegisterController::class, 'store'])  
+    ->name('registere');
+    Route::get('/login', [AuthController::class, 'create'])
+    ->name('login');
+    Route::post('/login', [AuthController::class, 'store'])
+    ->name('logine');
+
+});
+
+Route::get('/logout', [AuthController::class, 'logout'])
+->name('logout');
+
 Route::get('/contact', function () {
     return view('Guest/contact');
 });
-Route::get('/profile', function () {
-    return view('User/profile');
-});
+Route::put('/profile/{user}', [UserController::class, 'update'])
+->name('profile.update');
+
+Route::get('/profile', [UserController::class, 'show'])
+->name('profile');
+Route::get('/dashboard', [DashboardController::class, 'index']);
+
+Route::post('/addVoiture', [VoitureController::class, 'store'])
+->name('voiture');
+Route::post('/addCin', [CinController::class, 'store'])
+->name('cin');
+
 Route::get('/addTrajet', function () {
     return view('User/addTrajet');
 });
@@ -53,9 +75,9 @@ Route::get('/reservationPassager', function () {
 Route::get('/reservationConducteur', function () {
     return view('User/reservationConducteur');
 });
-Route::get('/stat', function () {
-    return view('Admin/stat');
-});
+
+Route::get('/stat', [AdminController::class, 'index'])
+->name('stat');
 Route::get('/ville', function () {
     return view('Admin/ville');
 });

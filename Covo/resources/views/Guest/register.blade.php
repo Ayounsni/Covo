@@ -1,19 +1,6 @@
 <x-layout>    
   
         @include('partials.navbar')
-        <div class="rounded-md bg-green-50 p-2 self-center mb-2 w-100">
-          <div class="flex">
-              <div class="flex-shrink-0">
-                  <!-- Nouvelle icône d'erreur -->
-                  <i class="bi bi-check2-all text-green-600 text-lg"></i>
-              </div>
-              <div class="ml-3">
-                  <p class="text-md font-medium text-green-800 align-middle">
-                      hhhhhhhh
-                  </p>
-              </div>
-          </div>
-      </div>
         <div class="flex justify-center w-full">
             <div class="w-[50%] hidden lg:block">
                 <img   width="740" src="{{ asset('image/car.png') }}" alt="">

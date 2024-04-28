@@ -1,5 +1,5 @@
 <x-layout>    
-    @include('partials.navbar2')
+    @include('partials.navbar')
     <div class="flex justify-center"> 
   <div class="min-h-screen w-full  bg-white s border-x-2 position-relative lg:w-8/12 ">
     <img src="{{ asset('image/dash.png') }}" class="w-full" alt="">
@@ -12,8 +12,7 @@
     
   </div>
 </div>
-     
-           
+             
     @include('partials.footer')
 
 </x-layout>

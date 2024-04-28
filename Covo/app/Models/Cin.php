@@ -10,6 +10,13 @@ class Cin extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'num',
+        'recto',
+        'verso',
+        'user_id'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

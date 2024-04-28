@@ -50,10 +50,10 @@
                 </div>
                  </a>
                 <div class="hidden lg:inline-block">
-                    <button type="button "
+                 <a href="{{route('logout')}}">  <button type="button "
                     class=" flex items-center g gap-2 px-3 py-2 mr-2 text-white transition-all duration-500 safa hover:bg-left rounded-3xl">
                     <i class="bi bi-box-arrow-right"></i>
-                </button>
+                </button></a> 
                 </div>
 
             <div class="lg:hidden">

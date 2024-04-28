@@ -10,6 +10,14 @@ class Voiture extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nom',
+        'matricule',
+        'model',
+        'image',
+        'user_id'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
