@@ -19,7 +19,7 @@ class CinController extends Controller
             'num.regex'=>'Veuillez entrez de cet format HH74718',
         ]);
         if ($validator->fails()) {
-            session()->flash('form_submission', true);
+            session()->flash('form', true);
             return back()->withErrors($validator)->withInput();
         }
 

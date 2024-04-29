@@ -5,9 +5,11 @@ use App\Http\Controllers\CinController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\TrajetController;
 use App\Http\Controllers\VoitureController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EvaluationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,7 +50,7 @@ Route::get('/contact', function () {
 Route::put('/profile/{user}', [UserController::class, 'update'])
 ->name('profile.update');
 
-Route::get('/profile', [UserController::class, 'show'])
+Route::get('/profile', [UserController::class, 'index'])
 ->name('profile');
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
@@ -56,10 +58,18 @@ Route::post('/addVoiture', [VoitureController::class, 'store'])
 ->name('voiture');
 Route::post('/addCin', [CinController::class, 'store'])
 ->name('cin');
+Route::post('/addEva/{user}', [EvaluationController::class, 'store'])
+->name('evaluation');
 
-Route::get('/addTrajet', function () {
-    return view('User/addTrajet');
-});
+Route::get('/user/{user}', [UserController::class, 'show'])
+->name('user');
+
+Route::get('/addTrajet', [TrajetController::class, 'create'])
+->name('addTrajet');
+Route::post('/addTrajete', [TrajetController::class, 'store'])
+->name('addTrajete');
+
+
 Route::get('/editTrajet', function () {
     return view('User/editTrajet');
 });

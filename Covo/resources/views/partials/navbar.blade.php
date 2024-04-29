@@ -66,7 +66,7 @@
                  </li>
                  <li
                      class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
-                     <a href="/contact">
+                     <a href="{{route('addTrajet')}}">
 
                          <div>Ajouter Trajet</div>
                      </a>
@@ -112,8 +112,8 @@
                 @user
                 <a href="/profile">
                     <div class="hidden lg:flex justify-center items-center align-middle gap-2 border-2 w-fit   border-[#14BC9C] bg-green-50 rounded-full px-2 py-1">
-                        <p class="text-[#334A5A] font-semibold align-middle text-sm ">{{$user->prenom }} {{$user->nom }}</p>
-                        <img  src="{{ $user->photo ? asset('storage/'.$user->photo) : asset('image/user.jpg') }}" class="w-10 h-9 border border-[#14BC9C] rounded-full"  alt="user">
+                        <p class="text-[#334A5A] font-semibold align-middle text-sm ">{{auth()->user()->prenom }} {{auth()->user()->nom }}</p>
+                        <img  src="{{ auth()->user()->photo ? asset('storage/'.auth()->user()->photo) : asset('image/user.jpg') }}" class="w-10 h-9 border border-[#14BC9C] rounded-full"  alt="user">
                     </div>
                      </a>
                     <div class="hidden lg:inline-block">
@@ -178,7 +178,7 @@
                     <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="#">Convoiturage</a>
                 </li>
                 <li class="mb-1">
-                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="#">Ajouter Trajet</a>
+                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="{{route('addTrajet')}}">Ajouter Trajet</a>
                 </li> 
                 <li class="mb-1">
                     <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="#">Mes trajets</a>

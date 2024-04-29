@@ -10,8 +10,15 @@ class Evaluation extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'userS_id',
+        'userR_id',
+        'note',
+        'commentaire',
+    ];
+
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'userS_id');
     }
 }

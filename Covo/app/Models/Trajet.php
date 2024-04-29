@@ -12,6 +12,16 @@ class Trajet extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'villeD_id',
+        'villeA_id',
+        'date',
+        'heure',
+        'prix',
+        'place',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
