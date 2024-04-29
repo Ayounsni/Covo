@@ -5,6 +5,7 @@ use App\Http\Controllers\CinController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\VilleController;
 use App\Http\Controllers\TrajetController;
 use App\Http\Controllers\VoitureController;
 use App\Http\Controllers\RegisterController;
@@ -68,17 +69,31 @@ Route::get('/addTrajet', [TrajetController::class, 'create'])
 ->name('addTrajet');
 Route::post('/addTrajete', [TrajetController::class, 'store'])
 ->name('addTrajete');
+Route::get('/editTrajet/{trajet}', [TrajetController::class, 'edit'])
+->name('editTrajet');
+Route::put('/editTrajete/{trajet}', [TrajetController::class, 'update'])
+->name('editTrajete');
+Route::delete('/deleteTrajet/{trajet}', [TrajetController::class, 'destroy'])
+->name('deleteTrajet');
+Route::get('/trajet', [TrajetController::class, 'show'])
+->name('trajet');
+Route::get('/convoiturage', [TrajetController::class, 'index'])
+->name('convoiturage');
+
+Route::get('/search-villes', [TrajetController::class, 'searchVilles'])
+->name('search.villes');
+Route::get('/search-villes/search', [TrajetController::class, 'searchVilles'])
+->name('search.villes.admin');
+
+Route::get('/ville', [VilleController::class, 'index'])->name('ville');
 
 
-Route::get('/editTrajet', function () {
-    return view('User/editTrajet');
-});
-Route::get('/convoiturage', function () {
-    return view('User/convoiturage');
-});
-Route::get('/mesTrajet', function () {
-    return view('User/mesTrajet');
-});
+// Route::get('/convoiturage', function () {
+//     return view('User/convoiturage');
+// });
+// Route::get('/mesTrajet', function () {
+//     return view('User/mesTrajet');
+// });
 Route::get('/reservationPassager', function () {
     return view('User/reservationPassager');
 });
@@ -88,9 +103,7 @@ Route::get('/reservationConducteur', function () {
 
 Route::get('/stat', [AdminController::class, 'index'])
 ->name('stat');
-Route::get('/ville', function () {
-    return view('Admin/ville');
-});
+
 Route::get('/user', function () {
     return view('Admin/user');
 });

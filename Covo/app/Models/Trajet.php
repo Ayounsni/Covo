@@ -26,9 +26,13 @@ class Trajet extends Model
     {
         return $this->belongsTo(User::class);
     }
-    public function ville()
+    public function villeD()
     {
-        return $this->belongsTo(Ville::class);
+        return $this->belongsTo(Ville::class,'villeD_id');
+    }
+    public function villeA()
+    {
+        return $this->belongsTo(Ville::class,'villeA_id');
     }
     public function reservation()
     {
