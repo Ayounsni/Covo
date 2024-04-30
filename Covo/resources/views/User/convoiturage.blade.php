@@ -34,20 +34,22 @@
      @foreach($trajets as $trajet) 
     <div class="w-5/6  flex rounded-md mt-6 shadow-md bg-gray-100 ">
       <div class="w-[25%] align-middle flex justify-center items-center ">
-        <img width="190" src="{{ asset('image/peu.jpg') }}" class="rounded-md hover:scale-110 transition-all" alt="img">
+        <img width="190" src="{{ asset('storage/'.$trajet->user->voiture->image) }}" class="rounded-md hover:scale-110 transition-all" alt="img">
       </div>
       <div class="w-[75%] flex flex-col justify-between items-between p-2">
         <div class="flex justify-between w-full">
+          <a href="{{route('user',$trajet->user->id)}}">
           <div class="flex gap-1">
             <div>
             <img width="53"  src="{{ $trajet->user->photo ? asset('storage/'.$trajet->user->photo) : asset('image/user.jpg') }}" class="border-2 border-[#14BC9C] rounded-full " alt="user">
           </div>
             <div class="flex flex-col">
               <p class="text-sm font-semibold text-[#334A5A]">{{$trajet->user->prenom}} {{$trajet->user->nom}}</p>
-              <p class="text-xs font-semibold text-[#334A5A]">Honda,2012</p>
-              <p class="text-xs font-semibold text-[#334A5A]"><i class="bi bi-star-fill text-xs text-yellow-500"></i> 5</p>
+              <p class="text-xs font-semibold text-[#334A5A]">{{$trajet->user->voiture->nom}},{{$trajet->user->voiture->model}}</p>
+              {{-- <p class="text-xs font-semibold text-[#334A5A]"><i class="bi bi-star-fill text-xs text-yellow-500"></i> 5</p> --}}
             </div>
           </div>
+          </a>
           <div class="flex gap-1 px-3 ">
             <div>
               <img width="60" src="{{ asset('image/trajet.png') }}" alt="logo">
@@ -61,7 +63,11 @@
         <p class="text-sm font-semibold text-[#334A5A] mb-1">{{$trajet->place}} place(s)</p>
         <div class="flex justify-between w-full mt-2 pr-2">
           <p class="text-lg font-bold text-[#334A5A]">{{ \Carbon\Carbon::parse($trajet->date)->format('d F') }}, {{ \Carbon\Carbon::parse($trajet->heure)->format('H:i') }} <span class="ml-4">{{$trajet->prix}} MAD</span></p>
+          @if($trajet->user->id == auth()->user()->id )
+          <p  class="py-1 px-4 text-white rounded-md transition-all  text-center duration-500 safa hover:bg-left ">  Mon trajet</p>
+          @else
           <a href="" class="py-1 px-4 text-white rounded-md transition-all  text-center duration-500 safa hover:bg-left "> <i class="bi bi-ticket-perforated"></i> Réserver</a>
+          @endif
         </div>
         
       </div>

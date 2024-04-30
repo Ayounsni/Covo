@@ -86,6 +86,9 @@ Route::get('/search-villes/search', [TrajetController::class, 'searchVilles'])
 ->name('search.villes.admin');
 
 Route::get('/ville', [VilleController::class, 'index'])->name('ville');
+Route::post('/ville', [VilleController::class, 'store'])->name('addVille');
+Route::put('/ville/{ville}', [VilleController::class, 'update'])->name('editVille');
+Route::delete('/ville/{ville}', [VilleController::class, 'destroy'])->name('deleteVille');
 
 
 // Route::get('/convoiturage', function () {

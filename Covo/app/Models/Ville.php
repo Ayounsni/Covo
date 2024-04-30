@@ -10,6 +10,10 @@ class Ville extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nom',
+    ];
+
     public function trajet()
     {
         return $this->hasMany(Trajet::class);
