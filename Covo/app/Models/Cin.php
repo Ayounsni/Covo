@@ -14,7 +14,8 @@ class Cin extends Model
         'num',
         'recto',
         'verso',
-        'user_id'
+        'user_id',
+        'status',
     ];
 
     public function user()

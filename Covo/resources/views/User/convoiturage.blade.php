@@ -4,19 +4,20 @@
   <div class="min-h-screen w-full  bg-white s border-x-2 position-relative lg:w-8/12 ">
     <img src="{{ asset('image/ride.png') }}" class="w-full contrast-75 mb-20" alt="">
     <div class="flex justify-center ">
-    <div class="flex w-[83%]  shadow-md rounded-3xl bg-white absolute top-80">
+      <form method="POST" action="{{route('search')}}" class="flex w-[83%]  shadow-md rounded-3xl bg-white absolute top-80">
+        @csrf
       <div class="py-3 pl-3 text-2xl"><i class="bi bi-geo-alt text-[#334A5A] "></i></div>
       <div>
-        <input id = "villeDepartInput" type="text" placeholder="ville de depart" class="py-3 px-2 w-full outline-none  bg-white z-[20]">
+        <input required  name="villeD" id = "villeDepartInput" type="text" placeholder="ville de depart" class="py-3 px-2 w-full outline-none  bg-white z-[20]">
         <div id = "villesDiv" class = "rounded-lg bg-white absolute w-1/3 p-2 shadow-md z-[1] hidden">
           <ul id = "villesDepartDropdown">
             <!-- Dropdown items will be appended here -->
           </ul>
         </div>
       </div>
-      <div class="py-3 text-2xl"><i class="bi bi-geo-alt text-[#334A5A] "></i></div>
+      <div  class="py-3 text-2xl"><i class="bi bi-geo-alt text-[#334A5A] "></i></div>
       <div>
-        <input id = "villesFinInput" type="text" placeholder="ville de depart" class="py-3 px-2 w-full outline-none bg-white">
+        <input required name="villeA" id = "villesFinInput" type="text" placeholder="ville de depart" class="py-3 px-2 w-full outline-none bg-white">
         <div id = "villesDiv2" class = "rounded-lg bg-white absolute w-1/3 p-2 shadow-md z-[1] hidden">
           <ul id = "villesFinDropdown">
             <!-- Dropdown items will be appended here -->
@@ -24,11 +25,12 @@
         </div>
       </div>
       <div class="py-3 text-2xl "><i class="bi bi-calendar4-week text-[#334A5A]"></i></i></div>
-      <input type="date" placeholder="" class="py-3 px-2 w-[18%] outline-none bg-white ">
+      <input name="date" type="date" placeholder="" class="py-3 px-2 w-[18%] outline-none bg-white ">
       <div class="py-3 text-2xl"><i class="bi bi-person text-[#334A5A]"></i></div>
-      <input type="number" min="1" placeholder="1 passager" class="py-3 px-2 w-[18%] outline-none bg-white">
-      <button class="bg-[#334A5A] text-white text-center px-4 rounded-r-3xl shadow-md transition-all duration-500 safa hover:bg-left">Rechercher</button>
-    </div>
+      <input name="place" type="number" min="1" placeholder="1 passager" class="py-3 px-2 w-[18%] outline-none bg-white">
+      <a href="{{route('convoiturage')}}" class="mt-3 px-2 text-2xl hover:text-red-500"><i class="bi bi-arrow-repeat"></i></a>
+      <button type="submit" class="bg-[#334A5A] text-white text-center px-4 rounded-r-3xl shadow-md transition-all duration-500 safa hover:bg-left">Rechercher</button>
+    </form>
   </div>
     <div class="flex flex-col justify-center items-center mb-10 ">
      @foreach($trajets as $trajet) 
@@ -66,7 +68,42 @@
           @if($trajet->user->id == auth()->user()->id )
           <p  class="py-1 px-4 text-white rounded-md transition-all  text-center duration-500 safa hover:bg-left ">  Mon trajet</p>
           @else
-          <a href="" class="py-1 px-4 text-white rounded-md transition-all  text-center duration-500 safa hover:bg-left "> <i class="bi bi-ticket-perforated"></i> Réserver</a>
+          <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="py-1 px-4 text-white rounded-md transition-all  text-center duration-500 safa hover:bg-left "> <i class="bi bi-ticket-perforated"></i> Réserver</button>
+          <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden  overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative p-4 w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white pb-10 rounded-lg shadow dark:bg-gray-700">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                        <h3 class="text-xl font-semibold text-[#334A5A]">
+                            Nombre de place
+                        </h3>
+                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-center mt-4">
+                      <form method="POST" class="flex flex-col items-center justify-center gap-6 w-[60%]" action="" >
+                        @csrf        
+                        <div class="relative h-11 mb-2 w-full min-w-[50%]">
+                          <input placeholder="1" name="place" value="" type="number" min="1"
+                            class="peer h-full w-full border-b border-blue-gray-300 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-gray-900 outline outline-0 transition-all placeholder-shown:border-blue-red-500 focus:border-[#14BC9C] focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 placeholder:opacity-0 focus:placeholder:opacity-100" />
+                          <label
+                            class="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform
+                             after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-[#14BC9C] peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                            Nom de place
+                          </label>
+                          <x-erreur field="place" />
+                        </div>                              
+                        <button type="submit" class="text-gray-50 bg-[#334A5A] text-start mt-2 w-fit py-2 px-3 rounded-lg hover:bg-[#466881]">Réserver</button>
+                      </form>
+                    </div> 
+                </div>
+            </div>
+        </div>
           @endif
         </div>
         
@@ -74,105 +111,12 @@
 
     </div>
     @endforeach
-    {{-- <div class="w-5/6  flex rounded-md mt-6 shadow-md bg-gray-100 ">
-      <div class="w-[25%] align-middle flex justify-center items-center ">
-        <img width="190" src="{{ asset('image/wols.jpeg') }}" class="rounded-md hover:scale-110 transition-all" alt="">
-      </div>
-      <div class="w-[75%] flex flex-col justify-between items-between p-2">
-        <div class="flex justify-between w-full">
-          <div class="flex gap-1">
-            <div>
-            <img width="53"  src="{{ asset('image/abdo.jpg') }}" class="border-2 border-[#14BC9C] rounded-full " alt="user">
-          </div>
-            <div class="flex flex-col">
-              <p class="text-sm font-semibold text-[#334A5A]">Oussama Snini</p>
-              <p class="text-xs font-semibold text-[#334A5A]">Honda,2012</p>
-              <p class="text-xs font-semibold text-[#334A5A]"><i class="bi bi-star-fill text-xs text-yellow-500"></i> 5</p>
-            </div>
-          </div>
-          <div class="flex gap-1 px-3 ">
-            <div>
-              <img width="60" src="{{ asset('image/trajet.png') }}" alt="logo">
-            </div>
-          <div class="flex flex-column gap-3 mt-1">
-            <p class="font-semibold text-[#334A5A]">Marrakesh</p>
-            <p class="font-semibold text-[#334A5A]">Safi</p>
-          </div>
-        </div>
-        </div>
-        <p class="text-sm font-semibold text-[#334A5A] mb-1">3 place(s)</p>
-        <div class="flex justify-between w-full mt-2 pr-2">
-          <p class="text-lg font-bold text-[#334A5A]">20 avril, 21:30 <span class="ml-4">500 MAD</span></p>
-          <a href="" class="py-1 px-4 text-white rounded-md transition-all  text-center duration-500 safa hover:bg-left "> <i class="bi bi-ticket-perforated"></i> Réserver</a>
-        </div>
-        
-      </div>
-
+  </div>
+  <div class="flex justify-center mt-12">
+    <div class="my-3 w-full px-12">
+        {{ $trajets->links() }}
     </div>
-    <div class="w-5/6  flex rounded-md mt-6 shadow-md bg-gray-100 ">
-      <div class="w-[25%] align-middle flex justify-center items-center ">
-        <img width="190" src="{{ asset('image/cit.jpg') }}" class="rounded-md hover:scale-110 transition-all" alt="">
-      </div>
-      <div class="w-[75%] flex flex-col justify-between items-between p-2">
-        <div class="flex justify-between w-full">
-          <div class="flex gap-1">
-            <div>
-            <img width="53"  src="{{ asset('image/yassir.jpg') }}" class="border-2 border-[#14BC9C] rounded-full " alt="user">
-          </div>
-            <div class="flex flex-col">
-              <p class="text-sm font-semibold text-[#334A5A]">Oussama Snini</p>
-              <p class="text-xs font-semibold text-[#334A5A]">Honda,2012</p>
-              <p class="text-xs font-semibold text-[#334A5A]"><i class="bi bi-star-fill text-xs text-yellow-500"></i> 5</p>
-            </div>
-          </div>
-          <div class="flex gap-1 px-3 ">
-            <div>
-              <img width="60" src="{{ asset('image/trajet.png') }}" alt="logo">
-            </div>
-          <div class="flex flex-column gap-3 mt-1">
-            <p class="font-semibold text-[#334A5A]">Marrakesh</p>
-            <p class="font-semibold text-[#334A5A]">Safi</p>
-          </div>
-        </div>
-        </div>
-        <p class="text-sm font-semibold text-[#334A5A] mb-1">3 place(s)</p>
-        <div class="flex justify-between w-full mt-2 pr-2">
-          <p class="text-lg font-bold text-[#334A5A]">20 avril, 21:30 <span class="ml-4">500 MAD <span class="text-xs">pour 1 passager</span> </p>
-          <a href="" class="py-1 px-4 text-white rounded-md transition-all  text-center duration-500 safa hover:bg-left "> <i class="bi bi-ticket-perforated"></i> Réserver</a>
-        </div>
-        
-      </div>
-
-    </div> --}}
-  </div>
-  
-  <div class="flex justify-center"> 
-    <nav aria-label="Page navigation example mt-20">
-      <ul class="inline-flex -space-x-px text-sm mb-10">
-        <li>
-          <a href="#" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
-        </li>
-        <li>
-          <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-        </li>
-        <li>
-          <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-        </li>
-        <li>
-          <a href="#" aria-current="page" class="flex items-center justify-center px-3 h-8 text-[#334A5A] border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-        </li>
-        <li>
-          <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
-        </li>
-        <li>
-          <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
-        </li>
-        <li>
-          <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+</div>
   </div>
 </div>
      

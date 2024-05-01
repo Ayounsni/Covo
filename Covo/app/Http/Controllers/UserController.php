@@ -53,4 +53,21 @@ class UserController extends Controller
 
         return view('User/consultation',compact('user','commentaires','moyenne','total'));
     }
+
+    public function autoriser(User $user){
+ 
+        $user->update([
+            'bannir'=> 0,
+        ]);
+    
+        return redirect()->route('user.gestion')->with( 'succes', 'Le compte a été réactivé avec succès.'); 
+    }
+    public function ban(User $user){
+ 
+        $user->update([
+            'bannir'=> 1,
+        ]);
+    
+        return redirect()->route('user.gestion')->with('error', 'Le compte a été suspendu'); 
+    }
 }

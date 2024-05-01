@@ -20,6 +20,7 @@ class Trajet extends Model
         'heure',
         'prix',
         'place',
+        'status',
     ];
 
     public function user()

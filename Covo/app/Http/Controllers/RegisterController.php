@@ -22,7 +22,7 @@ class RegisterController extends Controller
             'nom' => ['required', 'string', 'max:255','min:3'],
             'prenom' => ['required', 'string', 'max:255','min:3'],
             'naissance' => ['required',"before:2006-01-01"],
-            'telephone' => ['required','regex:/^06\d{8}$/'],
+            'telephone' => ['required','regex:/^06\d{8}$/','unique:users,telephone'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
 
         ],[

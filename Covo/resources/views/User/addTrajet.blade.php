@@ -1,10 +1,11 @@
 <x-layout>    
-    @include('partials.navbar1')
+    @include('partials.navbar')
     <div class="flex justify-center"> 
   <div class="min-h-screen w-full  bg-white s border-x-2 position-relative lg:w-8/12 ">
     <img src="{{ asset('image/route.png') }}" class="w-full" alt="">
     <div class="flex flex-col items-center justify-center mb-6 ">
     <p class=" text-center text-lg my-12 w-fit text-[#334A5A]  iconChange lg:text-2xl hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">Ajouter Un Convoiturage</p>
+    @if(auth()->user()->voiture)
       <form method="POST" class="flex flex-col mt-2 gap-6 w-[80%] lg:w-[65%]" action="{{route('addTrajete')}}" >
         @csrf
       <div class="flex justify-center gap-4">
@@ -77,6 +78,12 @@
         </div>       
       <button type="submit" class="text-gray-50 bg-[#15BC9C] text-center w-full py-1 px-3 rounded-lg hover:bg-opacity-70">Ajouter Trajet</button>
       </form>
+    @else
+    <p class="text-lg text-red-500 font-semibold text-center mt-10">Pour ajouter un trajet, veuillez d'abord enregistrer le véhicule</p> 
+    <a class="text-lg text-blue-600 hover:text-blue-400 mt-3 hover:border-b-2 border-blue-400 " href="{{route('profile')}}">Profile</a>
+    
+    @endif
+
     </div>
     
   </div>

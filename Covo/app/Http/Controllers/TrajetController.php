@@ -8,10 +8,42 @@ use Illuminate\Http\Request;
 
 class TrajetController extends Controller
 {    
-    public function index(){
-        $trajets=Trajet::where('status', 'confirmer')->orderBy('created_at', 'desc')->paginate(4);
+    public function index(Request $request){
 
-        return view('User/convoiturage',compact('trajets'));
+        $villeD = $request->villeD;
+        $villeA = $request->villeA;
+        $date = $request->date;
+        $place = $request->place;
+
+        if($villeD && $villeA && $place && $date ){
+            $trajets = Trajet::join('villes as villeD', 'trajets.villeD_id', '=', 'villeD.id')
+            ->join('villes as villeA', 'trajets.villeA_id', '=', 'villeA.id')
+            ->where('villeD.nom', 'like', '%' . $villeD . '%')
+            ->where('villeA.nom', 'like', '%' . $villeA . '%')
+            ->where('date', 'like', '%' . $date . '%')
+            ->where('place', 'like', '%' . $place . '%')->paginate(100);
+            return view('User/convoiturage',compact('trajets'));
+        }elseif( $villeD && $villeA && $date){
+            $trajets = Trajet::join('villes as villeD', 'trajets.villeD_id', '=', 'villeD.id')
+            ->join('villes as villeA', 'trajets.villeA_id', '=', 'villeA.id')
+            ->where('villeD.nom', 'like', '%' . $villeD . '%')
+            ->where('villeA.nom', 'like', '%' . $villeA . '%')
+            ->where('date', 'like', '%' . $date . '%')->paginate(100);
+            return view('User/convoiturage',compact('trajets'));
+        }elseif( $villeD && $villeA){
+            $trajets = Trajet::join('villes as villeD', 'trajets.villeD_id', '=', 'villeD.id')
+            ->join('villes as villeA', 'trajets.villeA_id', '=', 'villeA.id')
+            ->where('villeD.nom', 'like', '%' . $villeD . '%')
+            ->where('villeA.nom', 'like', '%' . $villeA . '%')->paginate(100);
+            return view('User/convoiturage',compact('trajets'));
+        }
+        else{
+
+            $trajets=Trajet::where('status', 'confirmer')->orderBy('created_at', 'desc')->paginate(4);
+
+            return view('User/convoiturage',compact('trajets'));
+
+        }
     }
 
     public function show(){
@@ -94,5 +126,21 @@ class TrajetController extends Controller
         $villes = Ville::where('nom', 'like', "%$query%")->get();
     
         return response()->json($villes);
+    }
+    public function confirmer(Trajet $trajet){
+ 
+        $trajet->update([
+            'status'=> 'confirmer',
+        ]);
+    
+        return redirect()->route('route')->with( 'succes', 'Trajet acceptée'); 
+    }
+    public function rejeter(Trajet $trajet){
+ 
+        $trajet->update([
+            'status'=> 'rejeter',
+        ]);
+    
+        return redirect()->route('route')->with('error', 'Trajet rejetée'); 
     }
 }

@@ -1,5 +1,5 @@
 <x-layout>    
-    @include('partials.navbar1')
+    @include('partials.navbar')
     <div class="flex justify-center"> 
   <div class="min-h-screen w-full  bg-white s border-x-2 position-relative lg:w-8/12 ">
     <img src="{{ asset('image/reserve.png') }}" class="w-full mb-8" alt="">
@@ -15,28 +15,20 @@
 
     <div class="relative overflow-x-auto">
       <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-          <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
-              <tr>
-                  <th scope="col" class="px-6 py-3 rounded-s-lg text-center">
-                     Passager
-                   </th>
-                  <th scope="col" class="px-6 py-3 text-center">
-                      Ville de départ
-                  </th>
-                  <th scope="col" class="px-6 py-3 rounded-e-lg text-center">
-                      Ville d'arriver
-                  </th>
-                  <th scope="col" class="px-6 py-3 rounded-e-lg text-center">
-                    nombre de place
-                </th>
-                <th scope="col" class="px-6 py-3 rounded-e-lg text-center">
-                  Prix(MAD)
-              </th>
-                 <th scope="col" class="px-6 py-3 rounded-e-lg text-center">
-                     Validation
-                 </th>
-              </tr>
-        </thead>
+        <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
+          <tr>
+              <th scope="col" class="px-6 py-3 rounded-s-lg text-center" rowspan="2">Passager</th>
+              <th scope="col" class="px-6 py-3 rounded-s-lg text-center" rowspan="2">Besoin de places</th>
+              <th scope="col" class="px-6 py-3 rounded-s-lg text-center" colspan="4">Trajet</th>
+              <th scope="col" class="px-6 py-3 rounded-e-lg text-center" rowspan="2">Validation</th>
+          </tr>
+          <tr>
+              <th scope="col" class="px-6 py-3 text-center">Ville de départ</th>
+              <th scope="col" class="px-6 py-3 text-center">Ville d'arrivée</th>
+              <th scope="col" class="px-6 py-3 text-center">Nombre de places</th>
+              <th scope="col" class="px-6 py-3 rounded-e-lg text-center">Prix (MAD)</th>
+          </tr>
+      </thead>
   
     <tbody>
          <tr class="bg-white dark:bg-gray-800">
@@ -57,6 +49,8 @@
   </td>
   <td class="px-6 py-4 text-center">
     <p class="text-sm font-semibold text-[#334A5A]">150</p> 
+  </td>  <td class="px-6 py-4 text-center">
+    <p class="text-sm font-semibold text-[#334A5A]">1</p> 
   </td>
   <td class="px-6 py-4 flex justify-center align-items-center gap-2 ">
   

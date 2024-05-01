@@ -43,6 +43,22 @@ class CinController extends Controller
 
         return back()->with('succes', 'Carte d\'identité ajouter avec succés!');
     }
+    public function confirmer(Cin $cin){
+ 
+        $cin->update([
+            'status'=> 'confirmer',
+        ]);
+    
+        return redirect()->route('verification')->with( 'succes', 'C.I.N acceptée'); 
+    }
+    public function rejeter(Cin $cin){
+ 
+        $cin->update([
+            'status'=> 'rejeter',
+        ]);
+    
+        return redirect()->route('verification')->with('error', 'C.I.N rejetée'); 
+    }
 }
 
 
