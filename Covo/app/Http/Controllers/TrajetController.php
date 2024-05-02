@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Ville;
 use App\Models\Trajet;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class TrajetController extends Controller
 {    
@@ -21,25 +22,32 @@ class TrajetController extends Controller
             ->where('villeD.nom', 'like', '%' . $villeD . '%')
             ->where('villeA.nom', 'like', '%' . $villeA . '%')
             ->where('date', 'like', '%' . $date . '%')
-            ->where('place', 'like', '%' . $place . '%')->paginate(100);
+            ->where('place', 'like', '%' . $place . '%')
+            ->where('status', 'confirmer')->where('place', '>', 0)
+            ->whereDate('date', '>=', Carbon::today())->paginate(100);
             return view('User/convoiturage',compact('trajets'));
         }elseif( $villeD && $villeA && $date){
             $trajets = Trajet::join('villes as villeD', 'trajets.villeD_id', '=', 'villeD.id')
             ->join('villes as villeA', 'trajets.villeA_id', '=', 'villeA.id')
             ->where('villeD.nom', 'like', '%' . $villeD . '%')
             ->where('villeA.nom', 'like', '%' . $villeA . '%')
-            ->where('date', 'like', '%' . $date . '%')->paginate(100);
+            ->where('date', 'like', '%' . $date . '%')
+            ->where('status', 'confirmer')->where('place', '>', 0)
+            ->whereDate('date', '>=', Carbon::today())->paginate(100);
             return view('User/convoiturage',compact('trajets'));
         }elseif( $villeD && $villeA){
             $trajets = Trajet::join('villes as villeD', 'trajets.villeD_id', '=', 'villeD.id')
             ->join('villes as villeA', 'trajets.villeA_id', '=', 'villeA.id')
             ->where('villeD.nom', 'like', '%' . $villeD . '%')
-            ->where('villeA.nom', 'like', '%' . $villeA . '%')->paginate(100);
+            ->where('villeA.nom', 'like', '%' . $villeA . '%')
+            ->where('status', 'confirmer')->where('place', '>', 0)
+            ->whereDate('date', '>=', Carbon::today())->paginate(100);
             return view('User/convoiturage',compact('trajets'));
         }
         else{
 
-            $trajets=Trajet::where('status', 'confirmer')->orderBy('created_at', 'desc')->paginate(4);
+            $trajets=Trajet::where('status', 'confirmer')->orderBy('created_at', 'desc')->where('place', '>', 0)
+            ->whereDate('date', '>=', Carbon::today())->paginate(4);
 
             return view('User/convoiturage',compact('trajets'));
 

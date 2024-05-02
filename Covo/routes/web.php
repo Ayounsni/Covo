@@ -11,6 +11,7 @@ use App\Http\Controllers\VoitureController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EvaluationController;
+use App\Http\Controllers\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -112,6 +113,18 @@ Route::middleware('user')->group(function () {
     Route::get('/trajet', [TrajetController::class, 'show'])
     ->name('trajet');
 
+    Route::post('/reservation/{trajet}', [ReservationController::class, 'store'])
+    ->name('reservation');
+    Route::get('/reservationPassager', [ReservationController::class, 'passager'])
+    ->name('passager');
+    Route::get('/reservationConducteur', [ReservationController::class, 'conducteur'])
+    ->name('conducteur');
+
+    Route::put('/reservationRej/{reservation}', [ReservationController::class, 'rejeter'])
+    ->name('rejet');
+    Route::put('/reservationConf/{reservation}', [ReservationController::class, 'confirmer'])
+    ->name('confirm');
+
     Route::get('/convoiturage', [TrajetController::class, 'index'])
     ->name('convoiturage');
     Route::post('/convoiturage', [TrajetController::class, 'index'])
@@ -119,13 +132,6 @@ Route::middleware('user')->group(function () {
 
     Route::get('/search-villes', [TrajetController::class, 'searchVilles'])
     ->name('search.villes');
-
-    Route::get('/reservationPassager', function () {
-        return view('User/reservationPassager');
-    });
-    Route::get('/reservationConducteur', function () {
-        return view('User/reservationConducteur');
-    });
 
 });
 
