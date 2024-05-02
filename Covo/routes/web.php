@@ -11,6 +11,7 @@ use App\Http\Controllers\VoitureController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EvaluationController;
+use App\Http\Controllers\ForgetPasswordController;
 use App\Http\Controllers\ReservationController;
 
 /*
@@ -40,6 +41,16 @@ Route::middleware('guest')->group(function () {
     ->name('login');
     Route::post('/login', [AuthController::class, 'store'])
     ->name('logine');
+
+    Route::get('/motdepasse', [ForgetPasswordController::class, 'password'])
+    ->name('password');
+    Route::post('/motdepasse', [ForgetPasswordController::class, 'passwordPost'])
+    ->name('password.post');
+    Route::get('/reset-password/{token}', [ForgetPasswordController::class, 'resetPassword'])
+    ->name('reset.password');
+    Route::post('/reset-password', [ForgetPasswordController::class, 'resetPasswordPost'])
+    ->name('reset.password.post');
+
     Route::get('/contact', function () {
         return view('Guest/contact');
     });

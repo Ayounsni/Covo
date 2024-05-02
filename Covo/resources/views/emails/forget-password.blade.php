@@ -1,0 +1,1 @@
+<a href="{{route('reset.password', $token)}}">Récuperer le mot de passe</a>

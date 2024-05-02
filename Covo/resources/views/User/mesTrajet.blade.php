@@ -16,10 +16,10 @@
                     Mes Convoiturages
                 </p>
 
-                <div class="flex justify-evenly gap-3 flex-wrap w-full">
+                <div class="flex flex-col items-center lg:flex-row justify-evenly gap-3 flex-wrap w-full">
                     @foreach($trajets as $trajet)
                     <div
-                        class="w-5/12 flex rounded-md mt-3 shadow-md bg-gray-100"
+                        class="w-10/12 lg:w-5/12 flex rounded-md mt-3 shadow-md bg-gray-100"
                     >
                         <div
                             class="w-[100%] flex flex-col justify-between items-between p-2"

@@ -55,40 +55,39 @@
             </div>
     
     </div>
-    @include('partials.footer1')
+    @include('partials.footer')
  
     </x-layout>
 
     <script>
 
 
-            // Phrases à afficher
+
 const phrases = [
     "Un Trajet plus agréable et créez des souvenirs mémorables !",  
     "Une Route plus sûre et arrivez à destination en toute sécurité !",
     "Un Voyage sans stress et gardez plus d'argent dans votre portefeuille !",
-    // Ajoutez autant de phrases que vous le souhaitez
+
 ];
 
-// Index de la phrase actuellement affichée
+
 let currentIndex = 0;
 
-// Fonction pour mettre à jour le texte affiché
+
 function updateText() {
-    // Récupère l'élément conteneur
+  
     const textContainer = document.getElementById("text-container");
 
-    // Affiche la phrase actuelle
+   
     textContainer.textContent = phrases[currentIndex];
 
-    // Passe à la phrase suivante
+
     currentIndex = (currentIndex + 1) % phrases.length;
 }
 
-// Met à jour le texte initial
 updateText();
 
-// Démarre l'intervalle pour changer de phrase toutes les 10 secondes
+
 setInterval(updateText, 2400);
 
 let intervalId1, intervalId2, intervalId3;
@@ -124,7 +123,6 @@ function stopCounter(intervalId) {
     clearInterval(intervalId);
 }
 
-// Démarre automatiquement les compteurs lorsque la page est chargée
 document.addEventListener("DOMContentLoaded", startCounters);
 
 

@@ -39,7 +39,7 @@
          <tr class="bg-white dark:bg-gray-800">
                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
                 <div class="flex justify-center items-center align-middle gap-2  w-fit   shadow-sm bg-gray-100 rounded-full px-4 py-1">
-                  <img  src="{{ $reservation->foto ? asset('storage/'.$reservation->foto) : asset('image/user.jpg') }}" class=" h-9 w-9 border border-[#14BC9C] rounded-full " alt="user">
+                  <img  src="{{ $reservation->foto ? asset('storage/'.$reservation->foto) : asset('image/user.jpg') }}" class=" h-9 w-9 hidden lg:block border border-[#14BC9C] rounded-full " alt="user">
                   <p class="text-[#334A5A] font-semibold align-middle text-sm ">  {{$reservation->first}} {{$reservation->last}}</p>
               </div>
               </th>

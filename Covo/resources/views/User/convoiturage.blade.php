@@ -4,9 +4,9 @@
   <div class="min-h-screen w-full  bg-white s border-x-2 position-relative lg:w-8/12 ">
     <img src="{{ asset('image/ride.png') }}" class="w-full contrast-75 mb-20" alt="">
     <div class="flex justify-center ">
-      <form method="POST" action="{{route('search')}}" class="flex w-[83%]  shadow-md rounded-3xl bg-white absolute top-80">
+      <form method="POST" action="{{route('search')}}" class="flex w-[100%] lg:w-[83%]  shadow-md rounded-3xl bg-white absolute  top-44 lg:top-80">
         @csrf
-      <div class="py-3 pl-3 text-2xl"><i class="bi bi-geo-alt text-[#334A5A] "></i></div>
+      <div class="py-3 text-sm lg:text-2xl"><i class="bi bi-geo-alt text-[#334A5A] "></i></div>
       <div>
         <input required  name="villeD" id = "villeDepartInput" type="text" placeholder="ville de depart" class="py-3 px-2 w-full outline-none  bg-white z-[20]">
         <div id = "villesDiv" class = "rounded-lg bg-white absolute w-1/3 p-2 shadow-md z-[1] hidden">
@@ -15,7 +15,7 @@
           </ul>
         </div>
       </div>
-      <div  class="py-3 text-2xl"><i class="bi bi-geo-alt text-[#334A5A] "></i></div>
+      <div  class="py-3 text-sm lg:text-2xl"><i class="bi bi-geo-alt text-[#334A5A] "></i></div>
       <div>
         <input required name="villeA" id = "villesFinInput" type="text" placeholder="ville de depart" class="py-3 px-2 w-full outline-none bg-white">
         <div id = "villesDiv2" class = "rounded-lg bg-white absolute w-1/3 p-2 shadow-md z-[1] hidden">
@@ -24,12 +24,12 @@
           </ul>
         </div>
       </div>
-      <div class="py-3 text-2xl "><i class="bi bi-calendar4-week text-[#334A5A]"></i></i></div>
+      <div class="py-3 text-sm lg:text-2xl "><i class="bi bi-calendar4-week text-[#334A5A]"></i></i></div>
       <input name="date" type="date" placeholder="" class="py-3 px-2 w-[18%] outline-none bg-white ">
-      <div class="py-3 text-2xl"><i class="bi bi-person text-[#334A5A]"></i></div>
+      <div class="py-3 text-sm lg:text-2xl"><i class="bi bi-person text-[#334A5A]"></i></div>
       <input name="place" type="number" min="1" placeholder="1 passager" class="py-3 px-2 w-[18%] outline-none bg-white">
-      <a href="{{route('convoiturage')}}" class="mt-3 px-2 text-2xl hover:text-red-500"><i class="bi bi-arrow-repeat"></i></a>
-      <button type="submit" class="bg-[#334A5A] text-white text-center px-4 rounded-r-3xl shadow-md transition-all duration-500 safa hover:bg-left">Rechercher</button>
+      <a href="{{route('convoiturage')}}" class="mt-3 px-2 text-sm lg:text-2xl hover:text-red-500"><i class="bi bi-arrow-repeat"></i></a>
+      <button type="submit" class="bg-[#334A5A] text-white text-sm lg:text-lg text-center px-4 rounded-r-3xl shadow-md transition-all duration-500 safa hover:bg-left">Rechercher</button>
     </form>
   </div>
   <div class="w-3/6 my-2 flex justify-center">
@@ -38,7 +38,7 @@
   </div>
     <div class="flex flex-col justify-center items-center mb-10 ">
      @foreach($trajets as $trajet) 
-    <div class="w-5/6  flex rounded-md mt-6 shadow-md bg-gray-100 ">
+    <div class="w-11/12 lg:w-5/6  flex rounded-md mt-6 shadow-md bg-gray-100 ">
       <div class="w-[25%] align-middle flex justify-center items-center ">
         <img width="190" src="{{ asset('storage/'.$trajet->user->voiture->image) }}" class="rounded-md hover:scale-110 transition-all" alt="img">
       </div>

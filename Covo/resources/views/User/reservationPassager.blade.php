@@ -46,7 +46,7 @@
           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
             <div class="flex ">
               <div>
-              <img width="48"  src="{{ $reservation->trajet->user->photo ? asset('storage/'.$reservation->trajet->user->photo) : asset('image/user.jpg') }}" class="border-2 border-[#14BC9C] rounded-full " alt="user">
+              <img width="48"  src="{{ $reservation->trajet->user->photo ? asset('storage/'.$reservation->trajet->user->photo) : asset('image/user.jpg') }}" class="border-2 hidden lg:block border-[#14BC9C] rounded-full " alt="user">
             </div>
               <div class="flex flex-col">
                 <p class="text-sm font-semibold text-[#334A5A]">{{$reservation->trajet->user->prenom}} {{$reservation->trajet->user->nom}}</p>

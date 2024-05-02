@@ -38,14 +38,14 @@
                       Mot de passe
                     </label>
                   </div>
-                <a href="" class="text-end mt-1 text-sm text-[#189EB2] hover:text-teal-700">Mot de passe oublié ?</a> 
+                <a href="{{route('password')}}" class="text-end mt-1 text-sm text-[#189EB2] hover:text-teal-700">Mot de passe oublié ?</a> 
                 <button type="submit" class="text-gray-50 bg-[#334A5A] text-start w-fit py-2 px-2 rounded-lg hover:bg-[#466881]">Se connecter</button>
 
                 </form>
               {{-- </div>  --}}
             </div>
         </div>
-        @include('partials.footer1')
+        @include('partials.footer')
     </x-layout>
 
 

@@ -77,19 +77,20 @@
                                 </p>
                             </td>
                             <td
-                                class="px-3 py-2 align-middle flex  justify-center items-center gap-2"
+                                class="px-3 py-2 align-middle flex flex-col lg:flex-row  justify-center items-center gap-2"
                             >
                                 <div
-                                    class="w-[28%] "
+                                    class="w-[100%] lg:w-[30%] "
                                 >
-                                  <button  data-modal-target="default-modal{{$cin->id}}" data-modal-toggle="default-modal{{$cin->id}}">  <img
+                                    <img
                                         width="190"
+                                        data-modal-target="default-modal{{$cin->id}}" data-modal-toggle="default-modal{{$cin->id}}"
                                         src="{{ asset('storage/'.$cin->recto) }}"
                                         class="rounded-md hover:scale-110 transition-all"
                                         alt=""
-                                    /></button>
+                                    />
                                     <div id="default-modal{{$cin->id}}" tabindex="-1" aria-hidden="true" class="hidden  overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                                      <div class="relative p-4 w-4/12 max-h-full">
+                                      <div class="relative p-4 w-9/12 lg:w-4/12 max-h-full">
                                           <!-- Modal content -->
                                           <div class="relative bg-white pb-10 rounded-lg shadow dark:bg-gray-700">
                                               <!-- Modal header -->
@@ -120,7 +121,7 @@
                                   </div>
                                 </div>
                                 <div
-                                class="w-[28%] "
+                                class="w-[100%] lg:w-[30%]"
                             >
                             <button data-modal-target="default-modal1{{$cin->id}}" data-modal-toggle="default-modal1{{$cin->id}}">  <img
                               width="190"
@@ -129,7 +130,7 @@
                               alt=""
                           /></button>
                           <div id="default-modal1{{$cin->id}}" tabindex="-1" aria-hidden="true" class="hidden  overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                            <div class="relative p-4 w-4/12 max-h-full">
+                            <div class="relative p-4 w-9/12 lg:w-4/12 max-h-full">
                                 <!-- Modal content -->
                                 <div class="relative bg-white pb-10 rounded-lg shadow dark:bg-gray-700">
                                     <!-- Modal header -->

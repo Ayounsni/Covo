@@ -1,9 +1,9 @@
 <footer>
-    <div class="flex text-gray-50 flex-col lg:flex-row justify-around align-items-center pb-11 pt-20  bg-[#334A5A] position-relative  ">
+    <div class="flex text-gray-50 flex-col lg:flex-row justify-around align-items-center pb-11 mt-24 pt-20  bg-[#334A5A] position-relative  ">
         <div class="flex flex-column hidden lg:block">
 
            <p class="text-2xl mb-1 font-semibold">CoVo</p>
-          <a href=""><p class="text-md hover:border-b-2 size w-fit">A propos</p></a> 
+          <a href="/contact"><p class="text-md hover:border-b-2 size w-fit">A propos</p></a> 
           <a href=""> <p class="text-md hover:border-b-2 size w-fit">Blog</p></a> 
           <a href="">  <p class="text-md hover:border-b-2 size w-fit">Mentions légales</p></a> 
           <a href="">  <p class="text-md hover:border-b-2 size w-fit">Politique de confidentialité</p></a> 

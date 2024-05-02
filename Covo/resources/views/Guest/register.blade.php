@@ -93,7 +93,7 @@
             </form>
             </div>
         </div>
-        @include('partials.footer1')
+        @include('partials.footer')
      
      
  

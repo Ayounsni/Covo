@@ -18,7 +18,7 @@
                      class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
                      <a href="/contact">
 
-                         <div>Contact</div>
+                         <div>À propos</div>
                      </a>
                  </li>
                      @endguest
@@ -44,14 +44,14 @@
              </li>
              <li
                  class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
-                 <a href="{{route('stat')}}">
+                 <a href="{{route('route')}}">
 
                      <div>Trajets</div>
                  </a>
              </li>
              <li
              class="mr-6 text-center text-[#334A5A] pt-2 iconChange hover:after:bg-[#14BC9C] hover:after:w-[100%] after:transition-all after:duration-300 after:m-auto after:h-[3px] after:w-0 after:block">
-             <a href="{{route('')}}">    
+             <a href="{{route('verification')}}">    
                  <div>Vérification</div>
              </a>
          </li>
@@ -173,7 +173,7 @@
                     <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="/">Acceuil</a>
                 </li>
                 <li class="mb-1">
-                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="/contact">Contact</a>
+                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="/contact">À propos</a>
                 </li> 
                 @endguest
                 @user
@@ -203,16 +203,16 @@
                     <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="{{route('stat')}}">Tableau de bord</a>
                 </li>
                 <li class="mb-1">
-                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href=""{{route('user.gestion')}}>Utilisateur</a>
+                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="{{route('user.gestion')}}">Utilisateur</a>
                 </li> 
                 <li class="mb-1">
                     <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="{{route('ville')}}">Villes</a>
                 </li>
                 <li class="mb-1">
-                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="{{route('stat')}}">Trajets</a>
+                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="{{route('route')}}">Trajets</a>
                 </li>
                 <li class="mb-1">
-                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="{{route('stat')}}">Vérification</a>
+                    <a class="block p-4 text-sm font-semibold text-[#334A5A] hover:bg-[#b1e6dc] hover:text-[#334A5A] rounded" href="{{route('verification')}}">Vérification</a>
                 </li>
                 @endadmin
 
